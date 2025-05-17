@@ -1,3 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+:root {
+--font-display: 'Rubik', sans-serif;
+  --breakpoint-3xl: 1920px;
+  --color-darkbg: oklch(0.1 0.02 238.12);
+  --color-darkfade: oklch(0.17 0.03 240.09);
+  --color-pink-500: oklch(0.6 0.3 320);
+  --color-purple-500: oklch(0.7 0.2 290);
+  --color-blue-800: oklch(0.25 0.1 260);
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Base font */
+@layer base {
+  html {
+    font-family: var(--font-display);
+  }
+}
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
