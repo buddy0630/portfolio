@@ -104,15 +104,39 @@ export default function Hero() {
               Information Technology student at National University of Mongolia
             </p>
           </div>
-          <a
-            href="CV.pdf"
-            download
-            className="inline-flex items-center bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 rounded-full relative group overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-purple-600 opacity-20 rounded-full blur-xl group-hover:opacity-30 transition-opacity" />
-            <FiDownload className="text-white mr-2 z-10" />
-            <span className="text-white font-semibold z-10">Download CV</span>
-          </a>
+<a
+  href="CV.pdf"
+  download
+  className="
+    relative inline-flex items-center px-6 py-3 rounded-full 
+    bg-gradient-to-r from-pink-500 to-purple-500
+    overflow-hidden text-white font-semibold 
+    transform transition-all duration-500 
+    hover:scale-110 hover:shadow-2xl
+    group
+  "
+>
+  {/* white flash ripple */}
+  <div className="
+    absolute inset-0 bg-white/30 rounded-full 
+    scale-0 group-hover:scale-100 
+    transition-transform duration-500
+  " />
+
+  {/* gradient flip */}
+  <div className="
+    absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 
+    opacity-0 group-hover:opacity-100 
+    transition-opacity duration-500
+  " />
+
+  {/* content */}
+  <FiDownload className="mr-2 z-10 group-hover:animate-bounce" />
+  <span className="z-10">
+    Download CV
+  </span>
+</a>
+
         </div>
 
         <div className="flex md:flex-col space-x-4 md:space-x-0 mt-8 md:mt-0 md:ml-12 text-white">

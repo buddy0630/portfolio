@@ -21,11 +21,43 @@ export default function NavBar() {
           </li>
         ))}
       </ul>
-      <div className="hidden md:block ml-50">
-        <NavLink to="/contact" className="px-6 py-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-800 rounded-full text-white">
-          Contact Me
-        </NavLink>
-      </div>
+      <div className="hidden md:block ml-[50px]">
+  <NavLink
+    to="/contact"
+    className="
+      relative inline-flex items-center px-6 py-2 rounded-full
+      bg-gradient-to-r from-pink-500 via-purple-500 to-blue-800
+      text-white font-medium overflow-hidden
+      transform transition-all duration-500
+      hover:scale-105 hover:shadow-2xl
+      group
+    "
+  >
+    {/* white flash ripple */}
+    <div
+      className="
+        absolute inset-0 bg-white/30 rounded-full
+        scale-0 group-hover:scale-100
+        transition-transform duration-500
+      "
+    />
+
+    {/* gradient flip */}
+    <div
+      className="
+        absolute inset-0 bg-gradient-to-r from-blue-800 via-purple-500 to-pink-500
+        opacity-0 group-hover:opacity-100
+        transition-opacity duration-500
+      "
+    />
+
+    {/* text bounce */}
+    <span className="z-10 group-hover:animate-bounce">
+      Contact Me
+    </span>
+  </NavLink>
+</div>
+
       <div className="md:hidden text-white">
         <FaBars size={24} />
       </div>
