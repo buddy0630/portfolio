@@ -114,17 +114,20 @@ export default function Projects() {
 
       {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-12">
-          <h2 className="text-5xl font-extrabold">My Projects</h2>
-          <button
-            onClick={fetchGithubRepos}
-            disabled={isLoading}
-            className="flex items-center gap-2 px-6 py-3 bg-pink-500 rounded-full font-semibold hover:bg-opacity-80 transition-all"
-          >
-            <FaGithub />
-            {isLoading ? 'Loading...' : 'Load GitHub Projects'}
-          </button>
-        </div>
+        <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-6 items-start md:items-center justify-between mb-12">
+  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">
+    My Projects
+  </h2>
+  <button
+    onClick={fetchGithubRepos}
+    disabled={isLoading}
+    className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-3 bg-pink-500 rounded-full font-semibold hover:bg-opacity-80 transition-all"
+  >
+    <FaGithub size={20} />
+    {isLoading ? 'Loading...' : 'Load GitHub Projects'}
+  </button>
+</div>
+
 
         {/* Project cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

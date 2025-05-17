@@ -85,22 +85,7 @@ export default function About() {
         ))}
       </div>
       
-      {/* Profile image with glow */}
-      <div className={`relative z-20 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'} transition-all duration-1000`}>
-        <div className="w-80 h-80 rounded-full overflow-hidden relative group">
-          <img 
-            src="/laptop.jpg" 
-            alt="Bayanbat" 
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-            <span className="text-white font-bold text-lg">Bayanbat</span>
-          </div>
-        </div>
-        <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full filter blur-xl animate-pulse" />
-        <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full filter blur-xl animate-pulse" />
-      </div>
-      
+     
       {/* Content section */}
       <div className={`flex-1 text-white z-20 transform ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'} transition-all duration-1000 delay-300`}>
         <div className="flex items-center space-x-4 mb-6">
