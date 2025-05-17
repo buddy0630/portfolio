@@ -22,3 +22,23 @@
   50%  { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
+@layer components {
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+  .bg-darkbg {
+    background-color: var(--color-darkbg);
+  }
+  .bg-darkfade {
+    background-color: var(--color-darkfade);
+  }
+  .bg-pink-500 {
+    background-color: var(--color-pink-500);
+  }
+  .bg-purple-500 {
+    background-color: var(--color-purple-500);
+  }
+  .bg-blue-800 {
+    background-color: var(--color-blue-800);
+  }
+}
