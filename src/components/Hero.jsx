@@ -155,7 +155,28 @@ export default function Hero() {
       }
     };
 
+    const onTouchStart = e => {
+    isMouseDown.current = true;
+    const touch = e.touches[0];
+    mouse.x = touch.clientX;
+    mouse.y = touch.clientY;
+  };
+  const onTouchMove = e => {
+    const touch = e.touches[0];
+    mouse.x = touch.clientX;
+    mouse.y = touch.clientY;
+  };
+  const onTouchEnd = () => {
+    isMouseDown.current = false;
+  };
+
+  window.addEventListener('touchstart', onTouchStart, { passive: true });
+  window.addEventListener('touchmove', onTouchMove, { passive: true });
+  window.addEventListener('touchend', onTouchEnd);
+
     draw(performance.now());
+
+
 
     return () => {
       clearInterval(shootTimer);
@@ -164,6 +185,9 @@ export default function Hero() {
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mouseup', onMouseUp);
+      window.removeEventListener('touchstart', onTouchStart);
+    window.removeEventListener('touchmove', onTouchMove);
+    window.removeEventListener('touchend', onTouchEnd);
     };
   }, []);
 
